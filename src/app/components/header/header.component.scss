@@ -4,6 +4,8 @@
   display: flex;
   box-shadow: 0px 0px 2px lightgrey;
 
+
+
   // .header__logo
   &__logo {
     background-color: #b5d8f7;
@@ -22,7 +24,7 @@
     img {
       max-width: 173px;
       height: 65px;
-     
+
       @media (max-width:768px) {
         display: none;
       }
@@ -96,7 +98,7 @@
       }
 
     }
-}
+  }
 
   // .header__nav-wrapper
   &__nav-wrapper {
@@ -431,7 +433,7 @@
     @media (max-width:768px) {
       max-width: 100px;
     }
-}
+  }
 
   // .header__basket-wrapper
 
@@ -440,6 +442,11 @@
     align-items: center;
     gap: 20px;
     position: relative;
+
+    @media (max-width:768px) {
+      gap: 15px;
+    }
+
 
     img {
       @media (max-width:768px) {
@@ -528,3 +535,5 @@
 
 
 }
+
+
