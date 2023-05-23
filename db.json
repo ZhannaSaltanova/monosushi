@@ -92,7 +92,7 @@
       "category": {
         "title": "Сети",
         "path": "sety",
-        "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-286c8.appspot.com/o/images%2Fnav-img-sets.svg?alt=media&token=87149ff3-446e-4ae0-b410-d33b48b04c0f",
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-286c8.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=4bcac40a-468c-418d-a227-9027972d0d60",
         "id": 2
       },
       "title": "Сет Філадельфія",
@@ -137,7 +137,6 @@
       "id": 6
     }
   ],
-  
   "auth": [{
     "id": 1,
     "email": "admin@gmail.com",
