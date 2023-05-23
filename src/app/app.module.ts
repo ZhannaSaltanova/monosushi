@@ -5,8 +5,10 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
 
 import { initializeApp } from "firebase/app";
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environmet';
 import { provideStorage, getStorage } from '@angular/fire/storage';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirebaseApp } from '@angular/fire/app';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,6 +34,9 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { AuthorzationComponent } from './pages/authorzation/authorzation.component';
+import { CabinetComponent } from './pages/cabinet/cabinet.component';
+import { OfertaComponent } from './pages/oferta/oferta.component';
 
 
 @NgModule({
@@ -52,6 +57,9 @@ import { ToastrModule } from 'ngx-toastr';
     AdminProductComponent,
     AdminDiscountComponent,
     AdminOrdersComponent,
+    AuthorzationComponent,
+    CabinetComponent,
+    OfertaComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,11 +67,10 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-
-
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage()),
-
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
     CommonModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),

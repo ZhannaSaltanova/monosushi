@@ -90,17 +90,17 @@
     },
     {
       "category": {
-        "title": "Роли",
-        "path": "roly",
-        "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-286c8.appspot.com/o/images%2Fnav-img-rolls.svg?alt=media&token=4bcac40a-468c-418d-a227-9027972d0d60",
-        "id": 1
+        "title": "Сети",
+        "path": "sety",
+        "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-286c8.appspot.com/o/images%2Fnav-img-sets.svg?alt=media&token=87149ff3-446e-4ae0-b410-d33b48b04c0f",
+        "id": 2
       },
-      "title": "Найс рол ",
-      "path": "klasniy-roll",
-      "desc": "Найс рол ",
-      "price": 1000,
-      "weight": "460",
-      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-286c8.appspot.com/o/images%2Frol-4.jpg?alt=media&token=c9f6fe65-5925-4d5b-b9ad-b72093a66974",
+      "title": "Сет Філадельфія",
+      "path": "set-filadelfiya",
+      "desc": "Сет Філадельфія: з лососем / з креветкою / з крабом / з вугрем",
+      "price": 920,
+      "weight": "1000",
+      "imgPath": "https://firebasestorage.googleapis.com/v0/b/monosushi-286c8.appspot.com/o/images%2Fset-1.jpg?alt=media&token=c0a8d4f4-761b-4460-95a6-2a892081ae35",
       "count": 1,
       "id": 4
     },
@@ -136,5 +136,22 @@
       "count": 1,
       "id": 6
     }
-  ]
+  ],
+  
+  "auth": [{
+    "id": 1,
+    "email": "admin@gmail.com",
+    "password": "qwerty123",
+    "fullName": "Petro Petriv",
+    "role": "ADMIN"
+
+  },
+  {
+    "id": 2,
+    "email": "user@gmail.com",
+    "password": "qwerty123",
+    "fullName": "Pavliv Pavliv",
+    "role": "USER"
+  }
+]
 }
