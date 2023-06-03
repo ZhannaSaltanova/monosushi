@@ -65,6 +65,7 @@ export class AuthorzationComponent implements OnInit, OnDestroy {
     }, (e) => {
       console.log('error', e);
     })
+    
   }
 
   registerUser(): void {
@@ -91,5 +92,4 @@ export class AuthorzationComponent implements OnInit, OnDestroy {
     };
     setDoc(doc(this.afs, 'users', credential.user.uid), user);
   }
-
 }

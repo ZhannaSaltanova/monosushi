@@ -1,5 +1,5 @@
 .discount-info {
-
+  margin-top: 135px;
   // .discount-info__container
 
   &__container {
@@ -104,4 +104,8 @@
   &__content-list {
     margin-top: 60px;
   }
+}
+
+ul{
+  line-height: 1.6rem;
 }

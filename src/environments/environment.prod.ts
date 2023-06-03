@@ -1,4 +1,3 @@
-
 export const environment = {
 
     firebase: {
@@ -10,6 +9,11 @@ export const environment = {
         appId: "1:903165471594:web:c367d355182dd7bc71d313"
     },
 
-    production: false,
-    BACKEND_URL: "http://localhost:3000"
-}; 
+    production: true,
+    BACKEND_URL: "http://localhost:3000",
+
+    TELEGRAM_KEY: {
+        url: 'https://api.telegram.org/bot5619601197:AAEqCWcHYvhWSKhKoJYASn1q2pw23cIj7aE/sendMessage',
+        chatID: '-1001933848331'
+    }
+};

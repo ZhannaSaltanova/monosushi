@@ -1,7 +1,8 @@
-<div class="container col-12">
+<div class="container col-12 ">
   <form [formGroup]="productForm" (submit)="addProduct()">
-
+   
     <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Category</label>
       <select class="form-select" aria-label="Default select example" formControlName="category" name="category">
         <option [ngValue]="category" *ngFor="let category of adminCategories">{{category.title}}</option>
       </select>
@@ -25,7 +26,7 @@
 
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Price</label>
-      <input type="number" class="form-control" formControlName="price" name="price">
+      <input type="number" class="form-control" formControlName="price" name="price" min="1">
     </div>
 
     <div class="mb-3">
@@ -47,7 +48,6 @@
     <ng-container *ngIf="isUploaded">
       <div class=" d-flex justify-content-center">
         <img [src]="valueByControl('imgPath')" width="300px" alt="">
-
       </div>
       <button type="button" class="btn btn-danger w-100" (click)="deleteImage()">Delete</button>
     </ng-container>
@@ -71,7 +71,8 @@
       <tr *ngFor="let product of adminProducts">
         <td>{{product.id}}</td>
         <td>{{product.title}}</td>
-        <td>{{product.desc}}</td>
+        <td>{{product.desc}}
+        </td>
         <td><img [src]="product.imgPath" width="50px" alt=""></td>
         <td>
           <button class="btn btn-warning mx-1" (click)="editProduct(product)">Edit</button>

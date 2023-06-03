@@ -38,6 +38,11 @@ import { AuthorzationComponent } from './pages/authorzation/authorzation.compone
 import { CabinetComponent } from './pages/cabinet/cabinet.component';
 import { OfertaComponent } from './pages/oferta/oferta.component';
 
+import { MatDialogModule } from '@angular/material/dialog';
+import { AuthDialogComponent } from './components/auth-dialog/auth-dialog.component';
+import { BasketComponent } from './components/basket/basket.component';
+import { PhoneComponent } from './components/phone/phone.component';
+
 
 @NgModule({
   declarations: [
@@ -60,6 +65,9 @@ import { OfertaComponent } from './pages/oferta/oferta.component';
     AuthorzationComponent,
     CabinetComponent,
     OfertaComponent,
+    AuthDialogComponent,
+    BasketComponent,
+    PhoneComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +82,7 @@ import { OfertaComponent } from './pages/oferta/oferta.component';
     CommonModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

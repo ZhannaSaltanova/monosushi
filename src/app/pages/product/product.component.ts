@@ -16,6 +16,10 @@ export class ProductComponent implements OnInit {
 
   public eventSubscription!: Subscription
 
+  public currentCategoryName!: string;
+
+
+
   constructor(
     private productService: ProductsServiceService,
     private activatedRoute: ActivatedRoute,
@@ -33,10 +37,40 @@ export class ProductComponent implements OnInit {
   }
 
   getData(): void {
+    // const categoryName = this.activatedRoute.snapshot.paramMap.get('category') as string;
+    // this.productService.getAllbyCategory(categoryName).subscribe(data => {
+    //   this.userProducts = data
+    // })
+    // if (categoryName == 'roly') {
+    //   this.currentCategoryName = 'Роли'
+    // }
+    // else if (categoryName == 'sety') {
+    //   this.currentCategoryName = 'Сети'
+    // }
+    // else if (categoryName == 'drinks') {
+    //   this.currentCategoryName = 'Напої'
+    // }
+    // else if (categoryName == 'soys') {
+    //   this.currentCategoryName = 'Соуси'
+    // }
+
     const categoryName = this.activatedRoute.snapshot.paramMap.get('category') as string;
-    this.productService.getAllbyCategory(categoryName).subscribe(data => {
-      this.userProducts = data
+    this.productService.getAllFirebase().subscribe(data => {
+      let categoryProducts = data.filter(item => item['category']['path'] == categoryName)
+      this.userProducts = categoryProducts as IProductResponse[]
     })
+    if (categoryName == 'roly') {
+      this.currentCategoryName = 'Роли'
+    }
+    else if (categoryName == 'sets') {
+      this.currentCategoryName = 'Сети'
+    }
+    else if (categoryName == 'drinks') {
+      this.currentCategoryName = 'Напої'
+    }
+    else if (categoryName == 'soys') {
+      this.currentCategoryName = 'Соуси'
+    }
   }
 
   productCount(product: IProductResponse, value: boolean): void {
@@ -57,7 +91,6 @@ export class ProductComponent implements OnInit {
       } else {
         basket.push(product)
       }
-
     } else {
       basket.push(product)
     }
@@ -65,5 +98,5 @@ export class ProductComponent implements OnInit {
     product.count = 1;
     this.orderService.changeBasket.next(true)
   }
-
 }
+
