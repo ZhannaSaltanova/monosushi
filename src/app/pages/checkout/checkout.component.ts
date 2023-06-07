@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IProductResponse } from 'src/app/shared/interfaces/product.interface';
 import { OrdersServiceService } from 'src/app/shared/services/orders/orders-service.service';
-import { environment } from 'src/environments/environmet';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-checkout',
@@ -18,8 +18,6 @@ export class CheckoutComponent implements OnInit {
 
   public totalPriceOrder = 0;
 
-  public tgURL = environment.TELEGRAM_KEY.url;
-  public chatID = environment.TELEGRAM_KEY.chatID;
 
   constructor(
     private orderService: OrdersServiceService,
@@ -147,21 +145,6 @@ export class CheckoutComponent implements OnInit {
     Загальна ціна: ${this.totalPriceOrder}
     `;
 
-    const params = { chat_id: this.chatID, text };
-
-    this.http.post(this.tgURL, params).subscribe(
-      () => {
-        this.checkForm.reset();
-        localStorage.setItem('basket', '[]')
-        this.updateBasket()
-        this.orderService.changeBasket.next(true)
-        this.router.navigate([''])
-        // this.toastr.success('Ваше повідомлення відправлено, очікуйте фідбек!')
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
 
   }
 }

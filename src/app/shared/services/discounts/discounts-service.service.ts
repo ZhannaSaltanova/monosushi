@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environmet';
+import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs/internal/Observable';
 import { IDiscountRequest, IDiscountResponse } from '../../interfaces/discount.interface';
 import { CollectionReference, Firestore, addDoc, collectionData, deleteDoc, doc, docData, updateDoc } from '@angular/fire/firestore';

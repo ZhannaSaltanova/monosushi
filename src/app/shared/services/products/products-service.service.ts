@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environmet';
+import { environment } from 'src/environments/environment';
 import { IProductRequest, IProductResponse } from '../../interfaces/product.interface';
 import { CollectionReference, Firestore, addDoc, collectionData, deleteDoc, doc, docData, updateDoc } from '@angular/fire/firestore';
 import { DocumentData, collection } from '@firebase/firestore';
